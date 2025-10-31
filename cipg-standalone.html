@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIPG - Centro de Inteligencia Político Electoral Gubernamental</title>
+    <meta name="description" content="Inteligencia Artificial para prospectiva y análisis electoral en Campeche y México">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        }
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+        .whitespace-pre-line {
+            white-space: pre-line;
+        }
+        
+        /* Banner de reforma electoral */
+        .banner-scroll {
+            overflow: hidden;
+            background: linear-gradient(90deg, #4c1d95 0%, #5b21b6 50%, #4c1d95 100%);
+            border-bottom: 2px solid #7c3aed;
+            position: relative;
+        }
+        .banner-content {
+            display: flex;
+            animation: scroll 30s linear infinite;
+            white-space: nowrap;
+        }
+        .banner-item {
+            padding: 12px 40px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .banner-scroll:hover .banner-content {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-indigo-950 via-gray-900 to-black text-white">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 border-b border-indigo-700 bg-indigo-950 bg-opacity-95 backdrop-blur">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="h-14 w-14 bg-black rounded-lg flex items-center justify-center border border-indigo-600">
+                    <div class="text-2xl">♟️</div>
+                </div>
+                <div>
+                    <p class="text-xs text-indigo-300 tracking-widest">CENTRO DE INTELIGENCIA</p>
+                    <h1 class="font-bold text-white text-sm sm:text-base">POLÍTICO ELECTORAL GUBERNAMENTAL</h1>
+                </div>
+            </div>
+            <nav class="hidden md:flex gap-5 text-sm">
+                <a href="#servicios" class="hover:text-indigo-300 transition">Servicios</a>
+                <a href="#servicios-adicionales" class="hover:text-indigo-300 transition">Datos Abiertos</a>
+                <a href="#ia" class="hover:text-indigo-300 transition">IA</a>
+                <a href="#contacto" class="hover:text-indigo-300 transition">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="max-w-7xl mx-auto px-4 py-20 text-center">
+        <div>
+            <h2 class="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                Inteligencia Artificial para Estrategia Electoral
+            </h2>
+            <p class="text-xl text-gray-300 mb-4 max-w-3xl mx-auto">
+                Utilizamos <span class="text-indigo-400 font-bold">IA avanzada</span> para prospectiva electoral, simulación de escenarios y análisis predictivo.
+            </p>
+            <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+                Encuestas de opinión + Modelos de Machine Learning = Decisiones estratégicas basadas en datos
+            </p>
+            <div class="flex gap-4 justify-center flex-wrap">
+                <a href="#contacto" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg transition inline-block">
+                    Solicitar Cotización
+                </a>
+                <a href="#ia" class="border border-indigo-500 text-indigo-300 hover:bg-indigo-900 px-6 py-3 rounded-lg transition inline-block">
+                    Ver IA Electoral
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="max-w-7xl mx-auto px-4 py-16">
+        <h3 class="text-3xl font-bold text-center mb-12 text-indigo-300">Nuestros Servicios</h3>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <div class="bg-gradient-to-br from-indigo-900 to-gray-900 border border-indigo-700 rounded-lg p-6 hover:shadow-xl transition">
+                <div class="bg-indigo-600 w-12 h-12 rounded-lg flex items-center justify-center mb-3">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                </div>
+                <h4 class="text-white text-lg font-semibold mb-2">Encuestas a la medida</h4>
+                <p class="text-gray-300 text-sm">Diseño, levantamiento y análisis con IA.</p>
+            </div>
+
+            <div class="bg-gradient-to-br from-purple-900 to-gray-900 border border-purple-700 rounded-lg p-6 hover:shadow-xl transition">
+                <div class="bg-purple-600 w-12 h-12 rounded-lg flex items-center justify-center mb-3">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                    </svg>
+                </div>
+                <h4 class="text-white text-lg font-semibold mb-2">IA para Prospectiva</h4>
+                <p class="text-gray-300 text-sm">Machine Learning para escenarios electorales múltiples.</p>
+            </div>
+
+            <div class="bg-gradient-to-br from-indigo-900 to-gray-900 border border-indigo-700 rounded-lg p-6 hover:shadow-xl transition">
+                <div class="bg-indigo-600 w-12 h-12 rounded-lg flex items-center justify-center mb-3">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                </div>
+                <h4 class="text-white text-lg font-semibold mb-2">Segmentación IA</h4>
+                <p class="text-gray-300 text-sm">Análisis territorial con algoritmos avanzados.</p>
+            </div>
+
+            <div class="bg-gradient-to-br from-indigo-900 to-gray-900 border border-indigo-700 rounded-lg p-6 hover:shadow-xl transition">
+                <div class="bg-indigo-600 w-12 h-12 rounded-lg flex items-center justify-center mb-3">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                </div>
+                <h4 class="text-white text-lg font-semibold mb-2">Cumplimiento Legal</h4>
+                <p class="text-gray-300 text-sm">Reportes técnicos conforme a normativa INE/IEPAC.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Servicios Adicionales -->
+    <section id="servicios-adicionales" class="max-w-7xl mx-auto px-4 py-16 bg-gray-900 bg-opacity-50 rounded-3xl my-8">
+        <h3 class="text-3xl font-bold text-center mb-4 text-indigo-300">Servicios Adicionales</h3>
+        <p class="text-center text-gray-400 mb-8">Consulta de datos públicos y análisis electoral con fuentes abiertas</p>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+            
+            <!-- Consulta de Resultados Electorales -->
+            <div class="bg-indigo-950 border border-indigo-700 rounded-lg p-6 hover:border-indigo-500 transition">
+                <div class="flex items-center gap-2 mb-3">
+                    <svg class="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                    <span class="text-xs bg-green-600 px-2 py-1 rounded-full">Datos Abiertos</span>
+                </div>
+                <h4 class="text-white text-lg font-semibold mb-2">Resultados Electorales Históricos</h4>
+                <p class="text-gray-300 text-sm mb-4">Consulta resultados oficiales de elecciones pasadas en Campeche y México.</p>
+                <button onclick="mostrarResultadosElectorales()" class="text-indigo-400 hover:text-indigo-300 text-sm font-semibold">
+                    Ver fuentes →
+                </button>
+            </div>
+
+            <!-- Padrón Electoral -->
+            <div class="bg-indigo-950 border border-indigo-700 rounded-lg p-6 hover:border-indigo-500 transition">
+                <div class="flex items-center gap-2 mb-3">
+                    <svg class="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                    <span class="text-xs bg-green-600 px-2 py-1 rounded-full">Datos Abiertos</span>
+                </div>
+                <h4 class="text-white text-lg font-semibold mb-2">Padrón Electoral y Listas Nominales</h4>
+                <p class="text-gray-300 text-sm mb-4">Estadísticas del padrón electoral y distribución demográfica por municipio.</p>
+                <button onclick="mostrarPadronElectoral()" class="text-indigo-400 hover:text-indigo-300 text-sm font-semibold">
+                    Ver fuentes →
+                </button>
+            </div>
+
+            <!-- Financiamiento -->
+            <div class="bg-indigo-950 border border-indigo-700 rounded-lg p-6 hover:border-indigo-500 transition">
+                <div class="flex items-center gap-2 mb-3">
+                    <svg class="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span class="text-xs bg-green-600 px-2 py-1 rounded-full">Datos Abiertos</span>
+                </div>
+                <h4 class="text-white text-lg font-semibold mb-2">Financiamiento de Partidos</h4>
+                <p class="text-gray-300 text-sm mb-4">Consulta informes de ingresos y gastos de campañas políticas.</p>
+                <button onclick="mostrarFinanciamiento()" class="text-indigo-400 hover:text-indigo-300 text-sm font-semibold">
+                    Ver fuentes →
+                </button>
+            </div>
+
+            <!-- Mapas Electorales -->
+            <div class="bg-indigo-950 border border-indigo-700 rounded-lg p-6 hover:border-indigo-500 transition">
+                <div class="flex items-center gap-2 mb-3">
+                    <svg class="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
+                    </svg>
+                    <span class="text-xs bg-green-600 px-2 py-1 rounded-full">Datos Abiertos</span>
+                </div>
+                <h4 class="text-white text-lg font-semibold mb-2">Mapas y Cartografía Electoral</h4>
+                <p class="text-gray-300 text-sm mb-4">Distritos electorales, secciones y mapas georreferenciados oficiales.</p>
+                <button onclick="mostrarMapas()" class="text-indigo-400 hover:text-indigo-300 text-sm font-semibold">
+                    Ver fuentes →
+                </button>
+            </div>
+
+            <!-- Encuestas Públicas -->
+            <div class="bg-indigo-950 border border-indigo-700 rounded-lg p-6 hover:border-indigo-500 transition">
+                <div class="flex items-center gap-2 mb-3">
+                    <svg class="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                    </svg>
+                    <span class="text-xs bg-green-600 px-2 py-1 rounded-full">Datos Abiertos</span>
+                </div>
+                <h4 class="text-white text-lg font-semibold mb-2">Encuestas Registradas INE</h4>
+                <p class="text-gray-300 text-sm mb-4">Acceso a encuestas electorales registradas ante autoridades.</p>
+                <button onclick="mostrarEncuestas()" class="text-indigo-400 hover:text-indigo-300 text-sm font-semibold">
+                    Ver fuentes →
+                </button>
+            </div>
+
+            <!-- Observación Electoral -->
+            <div class="bg-indigo-950 border border-indigo-700 rounded-lg p-6 hover:border-indigo-500 transition">
+                <div class="flex items-center gap-2 mb-3">
+                    <svg class="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                    </svg>
+                    <span class="text-xs bg-green-600 px-2 py-1 rounded-full">Datos Abiertos</span>
+                </div>
+                <h4 class="text-white text-lg font-semibold mb-2">Informes de Observación Electoral</h4>
+                <p class="text-gray-300 text-sm mb-4">Reportes de observadores electorales y organismos internacionales.</p>
+                <button onclick="mostrarObservacion()" class="text-indigo-400 hover:text-indigo-300 text-sm font-semibold">
+                    Ver fuentes →
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- IA Section -->
+    <section id="ia" class="max-w-6xl mx-auto px-4 py-16">
+        <div class="bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 rounded-3xl p-8 md:p-12 border-2 border-purple-500">
+            <div class="text-center mb-8">
+                <div class="inline-block bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
+                    🤖 TECNOLOGÍA DE VANGUARDIA
+                </div>
+                <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                    IA para Prospectiva Electoral
+                </h3>
+                <p class="text-indigo-200 text-lg">
+                    Generamos escenarios electorales múltiples con simulaciones Monte Carlo y Machine Learning
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-indigo-950 bg-opacity-60 p-6 rounded-xl border border-purple-500">
+                    <h4 class="text-xl font-bold text-purple-300 mb-3">🎯 Simulación de Escenarios</h4>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li>• Más de 10,000 simulaciones Monte Carlo</li>
+                        <li>• 5-10 escenarios diferentes por análisis</li>
+                        <li>• Precisión del 90%+ en predicciones</li>
+                        <li>• Variables: participación, voto cruzado, tendencias</li>
+                    </ul>
+                </div>
+
+                <div class="bg-indigo-950 bg-opacity-60 p-6 rounded-xl border border-purple-500">
+                    <h4 class="text-xl font-bold text-purple-300 mb-3">🧠 Machine Learning</h4>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li>• Redes neuronales para proyecciones</li>
+                        <li>• Algoritmos bayesianos y regresión</li>
+                        <li>• Análisis predictivo en tiempo real</li>
+                        <li>• Python, TensorFlow, scikit-learn</li>
+                    </ul>
+                </div>
+
+                <div class="bg-indigo-950 bg-opacity-60 p-6 rounded-xl border border-purple-500">
+                    <h4 class="text-xl font-bold text-purple-300 mb-3">📊 Big Data Electoral</h4>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li>• Procesamiento de millones de datos</li>
+                        <li>• Análisis histórico de 20+ años</li>
+                        <li>• Integración de múltiples fuentes</li>
+                        <li>• Dashboards interactivos en vivo</li>
+                    </ul>
+                </div>
+
+                <div class="bg-indigo-950 bg-opacity-60 p-6 rounded-xl border border-purple-500">
+                    <h4 class="text-xl font-bold text-purple-300 mb-3">⚡ Ventaja Estratégica</h4>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li>• Anticipación de movimientos adversarios</li>
+                        <li>• Optimización de recursos de campaña</li>
+                        <li>• Ajustes tácticos basados en datos</li>
+                        <li>• Certificación técnica de resultados</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="#contacto" class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg text-lg font-bold shadow-lg inline-block transition">
+                    Solicitar Demo de IA Electoral
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="max-w-4xl mx-auto px-4 py-16">
+        <h3 class="text-3xl font-bold text-center mb-12 text-indigo-300">Contáctanos</h3>
+        <div class="bg-gradient-to-br from-indigo-950 to-gray-900 border border-indigo-700 rounded-lg p-8">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        </svg>
+                        <div>
+                            <p class="text-sm text-gray-400">Teléfonos</p>
+                            <p class="text-white">9811471235 / 4441114866</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        <div>
+                            <p class="text-sm text-gray-400">Email</p>
+                            <a href="mailto:observadorescamp@gmail.com" class="text-white hover:text-indigo-300 text-sm">observadorescamp@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <input type="text" id="nombre" placeholder="Tu nombre" class="w-full px-3 py-2 bg-gray-800 border border-indigo-700 text-white rounded-lg">
+                    <input type="email" id="email" placeholder="Tu correo" class="w-full px-3 py-2 bg-gray-800 border border-indigo-700 text-white rounded-lg">
+                    <textarea id="mensaje" placeholder="Mensaje" rows="4" class="w-full px-3 py-2 bg-gray-800 border border-indigo-700 text-white rounded-lg"></textarea>
+                    <button onclick="enviarMensaje()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg transition">
+                        Enviar Mensaje
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-indigo-900 mt-16 py-8 text-center text-gray-400 text-sm">
+        <p>© 2025 Centro de Inteligencia Político Electoral Gubernamental (CIPG)</p>
+        <p class="mt-2">RC&HC Consulting | Análisis Electoral Profesional</p>
+    </footer>
+
+    <!-- Chatbot Button -->
+    <button onclick="toggleChat()" id="chatButton" class="fixed bottom-6 right-6 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 p-5 rounded-full shadow-2xl z-50 transition transform hover:scale-110">
+        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+        </svg>
+    </button>
+
+    <!-- Chatbot -->
+    <div id="chatWindow" class="fixed bottom-20 right-6 w-96 bg-gray-900 border-2 border-indigo-600 rounded-2xl shadow-2xl z-50 max-h-[600px] hidden">
+        <div class="bg-gradient-to-r from-indigo-700 to-purple-700 p-4 rounded-t-2xl">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h3 class="text-white font-bold text-sm">Asesor Electoral CIPG</h3>
+                    <p class="text-indigo-200 text-xs">En línea</p>
+                </div>
+                <button onclick="toggleChat()" class="text-white text-xl hover:text-indigo-200">✕</button>
+            </div>
+        </div>
+
+        <div id="chatMessages" class="p-4 space-y-3 bg-gray-950 max-h-[400px] overflow-y-auto">
+            <div class="flex justify-start">
+                <div class="max-w-[85%] p-3 rounded-2xl text-sm bg-gradient-to-br from-indigo-700 to-indigo-800 text-white whitespace-pre-line">¡Hola! 👋 Soy tu Asesor Electoral Estratégico del CIPG.
+
+Estoy aquí para ayudarte con:
+• 📊 Encuestas y estudios de opinión
+• 🎯 Estrategia electoral
+• 📈 Análisis de datos
+• 🗳️ Proyecciones y escenarios
+
+¿En qué puedo asesorarte hoy?</div>
+            </div>
+        </div>
+
+        <div id="quickOptions" class="p-3 bg-gray-900 border-t border-indigo-800">
+            <p class="text-xs text-indigo-300 mb-2">Preguntas frecuentes:</p>
+            <div class="grid grid-cols-2 gap-2">
+                <button onclick="enviarMensajeRapido('¿Cómo usan IA?')" class="text-xs bg-purple-700 hover:bg-purple-600 text-white px-3 py-2 rounded-lg transition">
+                    🤖 IA
+                </button>
+                <button onclick="enviarMensajeRapido('Quiero una encuesta')" class="text-xs bg-indigo-800 hover:bg-indigo-700 text-white px-3 py-2 rounded-lg transition">
+                    📊 Encuestas
+                </button>
+                <button onclick="enviarMensajeRapido('Estrategia electoral')" class="text-xs bg-indigo-800 hover:bg-indigo-700 text-white px-3 py-2 rounded-lg transition">
+                    ⚡ Estrategia
+                </button>
+                <button onclick="enviarMensajeRapido('Datos abiertos')" class="text-xs bg-green-700 hover:bg-green-600 text-white px-3 py-2 rounded-lg transition">
+                    📂 Datos Abiertos
+                </button>
+                <button onclick="enviarMensajeRapido('Información de contacto')" class="text-xs bg-indigo-800 hover:bg-indigo-700 text-white px-3 py-2 rounded-lg transition">
+                    📞 Contacto
+                </button>
+            </div>
+        </div>
+
+        <div class="p-3 bg-gray-900 rounded-b-2xl border-t border-indigo-800">
+            <div class="flex gap-2">
+                <input type="text" id="chatInput" placeholder="Escribe tu consulta..." class="flex-1 px-3 py-2 text-sm bg-gray-800 text-white rounded-lg border border-indigo-700" onkeypress="if(event.key === 'Enter') enviarMensajeChat()">
+                <button onclick="enviarMensajeChat()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg transition">
+                    ➤
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Funciones para mostrar fuentes de datos abiertos
+        function mostrarResultadosElectorales() {
+            const fuentes = `📊 RESULTADOS ELECTORALES HISTÓRICOS
+
+🔗 Fuentes Oficiales:
+
+1. INE - Instituto Nacional Electoral
+   https://www.ine.mx/voto-y-elecciones/elecciones-2024/
+   • Resultados oficiales nacionales
+   • Base de datos PREP (Programa de Resultados Electorales Preliminares)
+
+2. IEPAC - Instituto Electoral y de Participación Ciudadana de Campeche
+   https://www.iepac.mx/
+   • Resultados estatales y municipales
+   • Histórico de elecciones en Campeche
+
+3. Atlas de Resultados Electorales INE
+   https://atlas.ine.mx/
+   • Visualización interactiva
+   • Comparativos por elección
+   • Datos descargables en CSV/Excel
+
+4. Datos Abiertos INE
+   https://datos.gob.mx/busca/organization/ine
+   • Datasets públicos
+   • API disponible
+   • Información histórica desde 1991`;
+            
+            alert(fuentes);
+        }
+
+        function mostrarPadronElectoral() {
+            const fuentes = `👥 PADRÓN ELECTORAL Y LISTAS NOMINALES
+
+🔗 Fuentes Oficiales:
+
+1. INE - Estadísticas Lista Nominal
+   https://www.ine.mx/credencial/estadisticas-lista-nominal/
+   • Lista nominal por entidad
+   • Distribución por sexo y edad
+   • Actualización mensual
+
+2. IEPAC - Padrón Electoral Campeche
+   https://www.iepac.mx/
+   • Estadísticas estatales
+   • Distribución por distrito
+   • Datos por municipio
+
+3. Datos Abiertos - Padrón Electoral
+   https://datos.gob.mx/busca/dataset/padron-electoral
+   • Datasets descargables
+   • Información demográfica
+   • Histórico de crecimiento
+
+4. INEGI - Datos Demográficos
+   https://www.inegi.org.mx/
+   • Población por municipio
+   • Proyecciones demográficas
+   • Complemento para análisis territorial`;
+            
+            alert(fuentes);
+        }
+
+        function mostrarFinanciamiento() {
+            const fuentes = `💰 FINANCIAMIENTO DE PARTIDOS POLÍTICOS
+
+🔗 Fuentes Oficiales:
+
+1. INE - Sistema Integral de Fiscalización
+   https://sif.ine.mx/
+   • Informes de ingresos y egresos
+   • Fiscalización de campañas
+   • Topes de gastos de campaña
+
+2. Transparencia Presupuestaria INE
+   https://www.ine.mx/transparencia/
+   • Financiamiento público a partidos
+   • Montos por partido político
+   • Distribución anual
+
+3. Plataforma Nacional de Transparencia
+   https://www.plataformadetransparencia.org.mx/
+   • Solicitudes de información
+   • Respuestas de partidos políticos
+   • Documentos públicos
+
+4. Portal de Obligaciones de Transparencia
+   • Gastos de comunicación social
+   • Contrataciones de servicios
+   • Proveedores de campañas`;
+            
+            alert(fuentes);
+        }
+
+        function mostrarMapas() {
+            const fuentes = `🗺️ MAPAS Y CARTOGRAFÍA ELECTORAL
+
+🔗 Fuentes Oficiales:
+
+1. INE - Cartografía Electoral
+   https://cartografia.ine.mx/
+   • Mapas de distritos federales
+   • Límites de secciones electorales
+   • Archivos shapefile descargables
+
+2. IEPAC - Distritación Local
+   https://www.iepac.mx/
+   • Distritos locales de Campeche
+   • Mapas por municipio
+   • Secciones electorales
+
+3. Marco Geográfico Electoral
+   https://www.ine.mx/credencial/marco-geografico-electoral/
+   • Coordenadas geográficas
+   • Información geoespacial
+   • Actualización de polígonos
+
+4. INEGI - Marco Geoestadístico
+   https://www.inegi.org.mx/temas/mg/
+   • Mapas base de México
+   • Límites estatales y municipales
+   • Compatibilidad con SIG`;
+            
+            alert(fuentes);
+        }
+
+        function mostrarEncuestas() {
+            const fuentes = `📋 ENCUESTAS ELECTORALES REGISTRADAS
+
+🔗 Fuentes Oficiales:
+
+1. INE - Registro de Encuestas
+   https://www.ine.mx/voto-y-elecciones/encuestas-electorales/
+   • Encuestas registradas oficialmente
+   • Metodología de cada estudio
+   • Resultados publicados
+
+2. IEPAC - Encuestas Campeche
+   https://www.iepac.mx/
+   • Registro local de encuestas
+   • Estudios de opinión estatales
+   • Reportes técnicos
+
+3. Casas Encuestadoras Registradas
+   • Listado de empresas autorizadas
+   • Certificaciones vigentes
+   • Historial de precisión
+
+4. Criterios y Lineamientos
+   https://www.ine.mx/
+   • Reglamento de encuestas
+   • Metodología obligatoria
+   • Sanciones por incumplimiento`;
+            
+            alert(fuentes);
+        }
+
+        function mostrarObservacion() {
+            const fuentes = `👁️ OBSERVACIÓN ELECTORAL
+
+🔗 Fuentes Oficiales:
+
+1. INE - Observación Electoral
+   https://www.ine.mx/actores-politicos/observadores-electorales/
+   • Reportes de observadores
+   • Acreditación de organizaciones
+   • Informes finales
+
+2. IEPAC - Observadores Locales
+   https://www.iepac.mx/
+   • Organizaciones acreditadas en Campeche
+   • Informes de jornada electoral
+   • Resultados de observación
+
+3. OEA - Misiones de Observación
+   https://www.oas.org/es/
+   • Misiones internacionales
+   • Reportes de organismos multilaterales
+   • Recomendaciones
+
+4. Organizaciones de la Sociedad Civil
+   • Transparencia Mexicana
+   • Observatorio Ciudadano
+   • Red Nacional de Observación Electoral`;
+            
+            alert(fuentes);
+        }
+
+        // Respuestas del chatbot
+        const respuestas = {
+            encuesta: "📊 **Encuestas Profesionales**\n\nEn el CIPG diseñamos encuestas con:\n\n✓ Metodología probabilística y no probabilística\n✓ Muestreo estratificado territorial\n✓ Análisis estadístico avanzado\n✓ Reportes ejecutivos y técnicos\n\n**Tipos de encuestas:**\n• Pre-electorales y tracking\n• Exit polls\n• Estudios de imagen\n• Focus groups\n\n¿Necesitas cotización?",
+            
+            ia: "🔬 **Metodología con IA**\n\n**PROSPECTIVA ELECTORAL:**\n🤖 Machine Learning para identificar patrones\n📊 Simulación de 10,000+ escenarios posibles\n🎯 Modelos predictivos con precisión del 90%+\n⚡ Análisis en tiempo real durante campaña\n\n**HERRAMIENTAS IA:**\n• Python (scikit-learn, TensorFlow)\n• R para análisis estadístico\n• Algoritmos bayesianos\n• Redes neuronales para proyecciones\n\nGeneramos entre 5-10 escenarios diferentes.\n\n¿Te interesa contratar un análisis prospectivo?",
+            
+            estrategia: "⚡ **Estrategia Electoral Ganadora**\n\nTe ayudamos a:\n\n1️⃣ Identificar tu electorado objetivo\n2️⃣ Diseñar mensajes efectivos\n3️⃣ Optimizar recursos de campaña\n4️⃣ Monitorear a la competencia\n5️⃣ Ajustar táctica en tiempo real\n\n**Tip clave:** En Campeche 2027, la movilización será determinante.",
+            
+            contacto: "📞 **Contacto CIPG**\n\n**Teléfonos:**\n• 9811471235\n• 4441114866\n\n**Email:**\n• observadorescamp@gmail.com\n• casaencuestadorarcyhc@gmx.es\n\n**Horario:**\nLunes a Viernes, 9:00 - 18:00 hrs\n\n¿Necesitas agendar una consultoría?",
+            
+            datos: "📂 **Datos Abiertos Electorales**\n\nTenemos acceso a múltiples fuentes oficiales:\n\n📊 Resultados históricos (INE)\n👥 Padrón electoral\n💰 Financiamiento de partidos\n🗺️ Mapas electorales\n📋 Encuestas registradas\n👁️ Informes de observación\n\n**Todas son fuentes públicas oficiales.**\n\n¿Sobre cuál necesitas información?",
+            
+            default: "Entiendo 👍\n\nPuedo ayudarte con:\n• Encuestas y estudios\n• Análisis con IA\n• Estrategia electoral\n• Datos abiertos\n• Contacto\n\n¿Sobre qué tema quieres profundizar?"
+        };
+
+        function toggleChat() {
+            const chat = document.getElementById('chatWindow');
+            chat.classList.toggle('hidden');
+        }
+
+        function enviarMensajeRapido(mensaje) {
+            document.getElementById('quickOptions').style.display = 'none';
+            agregarMensaje(mensaje, 'user');
+            setTimeout(() => responderBot(mensaje), 800);
+        }
+
+        function enviarMensajeChat() {
+            const input = document.getElementById('chatInput');
+            const mensaje = input.value.trim();
+            if (!mensaje) return;
+            
+            document.getElementById('quickOptions').style.display = 'none';
+            agregarMensaje(mensaje, 'user');
+            input.value = '';
+            
+            setTimeout(() => responderBot(mensaje), 800);
+        }
+
+        function agregarMensaje(texto, tipo) {
+            const container = document.getElementById('chatMessages');
+            const div = document.createElement('div');
+            div.className = `flex ${tipo === 'user' ? 'justify-end' : 'justify-start'}`;
+            
+            const clase = tipo === 'user' 
+                ? 'bg-gradient-to-br from-purple-600 to-pink-600' 
+                : 'bg-gradient-to-br from-indigo-700 to-indigo-800';
+            
+            div.innerHTML = `<div class="max-w-[85%] p-3 rounded-2xl text-sm ${clase} text-white whitespace-pre-line">${texto}</div>`;
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function responderBot(mensaje) {
+            const lower = mensaje.toLowerCase();
+            let respuesta = respuestas.default;
+            
+            if (lower.includes('encuesta')) respuesta = respuestas.encuesta;
+            else if (lower.includes('ia') || lower.includes('inteligencia') || lower.includes('prospectiva') || lower.includes('escenario')) respuesta = respuestas.ia;
+            else if (lower.includes('estrategia') || lower.includes('campaña')) respuesta = respuestas.estrategia;
+            else if (lower.includes('contacto') || lower.includes('teléfono') || lower.includes('correo')) respuesta = respuestas.contacto;
+            else if (lower.includes('datos') || lower.includes('fuente') || lower.includes('abierto') || lower.includes('público')) respuesta = respuestas.datos;
+            
+            agregarMensaje(respuesta, 'bot');
+        }
+
+        function enviarMensaje() {
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const mensaje = document.getElementById('mensaje').value;
+            
+            if (nombre && email && mensaje) {
+                alert(`Mensaje enviado:\nNombre: ${nombre}\nEmail: ${email}\nMensaje: ${mensaje}\n\nNos pondremos en contacto contigo pronto.`);
+                document.getElementById('nombre').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('mensaje').value = '';
+            } else {
+                alert('Por favor completa todos los campos');
+            }
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
